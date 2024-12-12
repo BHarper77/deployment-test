@@ -15,5 +15,6 @@ function logError(message: string) {
 
 /** Logs messages */
 function logMessage(message: string) {
+	console.log("Message from process")
 	console.log(message)
 }
