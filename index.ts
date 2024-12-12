@@ -1,9 +1,17 @@
 try {
-	console.log("hello world")
+	logMessage("hello world")
 	
-	console.log("processing")
+	logMessage("processing")
 	
-	console.log("goodbye world")
+	logMessage("goodbye world")
 } catch (error) {
 	logError(error)
+}
+
+function logError(message: string) {
+	throw new Error(message)
+}
+
+function logMessage(message: string) {
+	console.log(message)
 }
