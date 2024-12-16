@@ -1,15 +1,12 @@
 name: Deploy to Production Environment
 on:
-  push:
-    tags:
-      - "[0-9]+.[0-9]+.[0-9]+"
+  release:
+    types: [published]
 
 concurrency: prod_environment
 
 jobs:
   deploy:
-    # make sure only tags pushed to release branch trigger this workflow
-    if: ${{ contains(github.ref, 'release/') }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
