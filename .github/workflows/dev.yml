@@ -1,0 +1,14 @@
+name: Deploy to Development Environment
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency: dev_environment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Deploying to dev"

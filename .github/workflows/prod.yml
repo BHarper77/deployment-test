@@ -1,0 +1,13 @@
+name: Deploy to Production Environment
+on:
+  release:
+    types: [published]
+
+concurrency: prod_environment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Deploying to prod"
